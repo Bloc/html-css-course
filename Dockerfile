@@ -1,8 +1,8 @@
-FROM busybox
+FROM ruby:2.1
 
 VOLUME ["/data"]
 WORKDIR /data
 
 ADD . /data
 
-CMD httpd -f -p $PORT
+CMD ruby -run -e httpd . -p $PORT
